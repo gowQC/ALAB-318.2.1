@@ -28,7 +28,13 @@ class ListView extends React.Component {
         </a>
         {displayImg ? (
           <>
-            <p>Good job! Here's your image of a golden star:</p>
+            <p>
+              Good job! Here's your image of a golden star.
+              <br />
+              <a href="http://localhost:3000/downloadButton">
+                If you want to download this image, click here.
+              </a>
+            </p>
             <img src="https://i0.wp.com/bookertalk.com/wp-content/uploads/2016/05/gold-star.jpg?ssl=1" />
           </>
         ) : (

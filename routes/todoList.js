@@ -10,14 +10,14 @@ router
   .get((req, res) => {
     res.render("ListView", { todoList });
   })
-  .post((req, res) => {
-    console.log(req.body);
-    res.json(req.body);
-  })
   .put((req, res) => {
-    console.log("test");
     console.log(req.body);
-    res.send("test put works");
+    if (req.body.completed === "on") {
+      todoList[req.body.task_number].completed = true;
+    } else {
+      todoList[req.body.task_number].completed = false;
+    }
+    res.redirect("http://localhost:3000/todoList");
   });
 
 // http://localhost:3000/todoList/:listItem
